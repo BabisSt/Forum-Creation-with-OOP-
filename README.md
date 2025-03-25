@@ -1,63 +1,62 @@
 # Forum-Creation-with-OOP
 
-Creates and manages a forum with posts <br/>
-Can see options below <br/> <br/>
+Creates and manages a forum with posts  
+Can see options below  
 
-
-Οδηγίες για μεταγλώττιση του προγράμματος:
+## Instructions for compiling the program:
+```
 g++ -c classes.cpp
 g++ -c main.cpp
 g++ -o exe main.o classes.o
 ./exe
+```
 
-Καθώς το πρόγραμμα τρέχει περιμένει από τον χρήστη επιλογές μεταξύ 0-7 οι οποίες θα αναλυθούν παρακάτω.
+As the program runs, it waits for the user to choose between options 0-7, which are explained below.
+- What is included in `classes.h`:
 
-	-Από τι αποτελείται το classes.h :
+This file contains all the class definitions with their structural elements and the functions.
 
-Μέσα σε αυτό το αρχείο μπορούν να βρεθούν όλες κλάσεις με τα δομικά τους στοιχεία καθώς και οι συναρτήσεις.
+Specifically:
+- Constructors and Destructors for Forum, Thread, Post, Date.
+- Structural members for the above classes.
+- Set and Get functions for the above classes.
 
-Πιο συγκεκριμένα->
-Constructor και Destructor για Forum,Thread,Post,Date.
-Δομικά μέλη των παραπάνω.
-Συναρτήσεις του τύπου set και get για τα παραπάνω.
+- What is included in `classes.cpp`:
 
-	-Από τι αποτελείται το classes.cpp :
+This file contains the implementations of the functions from `classes.h`.
 
-Μέσα σε αυτό το αρχείο υπάρχουν υλοποιημένες οι συναρτήσεις από το αρχείο classes.h.
+- What is included in `main.cpp`:
 
-	-Από τι αποτελείται το main.cpp
+This file contains the main program.
+There is a large switch statement that asks the user for options and terminates with the appropriate selection.
 
-Μέσα σε αυτό το αρχείο βρίσκεται το κυρίως πρόγραμμα.
-Υπάρχει μια μεγάλη switch η οποία ζητάει από τον χρήστη επιλογές και τερματίζει με την ανάλογη επιλογή.
+Specifically:
+- What the program can do:
+  The program consists of a switch with 8 options.
 
-Πιο συγκεκριμένα->
-	-Τι μπορεί να κάνει το πρόγραμμα-
-	Το πρόγραμμα αποτελείται από μια switch 8 επιλογών.
-	
-	1 Create Kanones kai xrhsimes plhrofories
-	2 Create a thread
-	3 Create a post
-	4 Print forum
-	5 Pick thread with title
-	6 Pick post with id
-	7 Pick 5 random posts and print them
-	0 to exit
+  1. Create rules and useful information
+  2. Create a thread
+  3. Create a post
+  4. Print forum
+  5. Pick thread with title
+  6. Pick post with id
+  7. Pick 5 random posts and print them
+  0 to exit
 
-	Αρχικά καλούνται constructors για default τιμές και για forum με τίτλο ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΑΦΗΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ.
-	Ύστερα μπορούμε να κάνουμε μια από τις παραπάνω επιλογές.
+  Initially, constructors are called for default values and for the forum with the title "ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΑΦΗΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ".
+  After that, you can make one of the above selections.
 
-	Από αυτές λειτουργούν σωστά οι 1,2,3,4,5,6,7,0.
-	Στην 1 δημιουργείται thread με τον αντίστοιχο τίτλο.
-	Στην 2 δημιουργείται thread με τίτλο και δημιουργό
-	επιλεγμένους τυχαία από πίνακες με τυχαίους τίτλους και δημιουργούς. Επίσης επιλέγεται τυχαία μια ημερομηνία δημιουργίας.	
-	Στην 3 δημιουργείται post με τον αντίστοιχο τρόπο όπως του thread με επιπλέον το χαρακτηριστικό id.
-	Στην 4 εκτυπώνεται ο πίνακας στον οποίο έχουμε 	σώσει τους τίτλους των thread.
-	Στην 5 επιλέγουμε ένα thread(περιμένουμε από τον χρήστη να γράψει ακριβώς τον τίτλο που επιθυμεί αλλιώς το πρόγραμμα δεν εμφανίζει κάτι).Αν υπάρχει εκτυπώνεται ο τίτλος,ο δημιουργός και η ημερομήνια αλλιώς δεν γίνεται τίποτα.
-	Στην 6 επιλέγουμε μέσω του id ένα post και εκτυπώνεται ο πίνακας που έχουμε σώσει τα χαρακτηριστικά του.
-	Στην 7 επιλέγονται 5 τυχαία post και εκτυπώνονται,ΑΝ υπάρχουν.
-	Στην 0 καλούνται destructorts και τερματίζει το πρόγραμμα.
+  Of these, options 1, 2, 3, 4, 5, 6, 7, and 0 work correctly.
+  In option 1, a thread is created with the corresponding title.
+  In option 2, a thread is created with a title and creator randomly selected from arrays with random titles and creators. A random creation date is also selected.
+  In option 3, a post is created in the same way as the thread, with an additional id attribute.
+  In option 4, the array with the thread titles is printed.
+  In option 5, a thread is selected (waiting for the user to type the exact title they want; otherwise, nothing is displayed). If the thread exists, the title, creator, and date are printed, otherwise, nothing happens.
+  In option 6, a post is selected via its id, and the array containing its attributes is printed.
+  In option 7, 5 random posts are selected and printed, IF they exist.
+  In option 0, destructors are called, and the program terminates.
 
-	-Τι δεν μπορεί να κάνει το πρόγραμμα-
-	
-	Δεν γνωρίζω για ποιον λόγο καλούνται destructors κάθε φορά που καλώ constructor μέσα σε μία από τις επιλογές δημιουργίας μου.Για αυτό και δεν συμπεριέλαβα τους constructors στην αντίστοιχες θέσεις.
-	Δεν κατάλαβα ακριβώς αν έπρεπε οι εκτυπώσεις να γίνονται μέσω συναρτήσεων ή οχι. Τις κάνω μέσω της main ωστόσο γνωρίζω πως να κάνω τις αντίστοιχες συναρτήσεις, αλλά δημιούργησα την άσκηση έτσι.
+- What the program cannot do:
+
+I am not sure why destructors are called every time I call a constructor within one of the creation options. Therefore, I did not include constructors in the respective places.
+I was not entirely sure whether the printouts were supposed to be done via functions or not. I have done them via `main()`, but I know how to implement the corresponding functions; I created the exercise this way.
